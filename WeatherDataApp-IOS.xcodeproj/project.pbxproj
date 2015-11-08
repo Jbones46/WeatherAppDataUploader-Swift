@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D00284101BEEA31200CD74ED /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D002840F1BEEA31200CD74ED /* Day.swift */; };
 		D03A46111BEEA6C60009759E /* weatherdata.txt in Resources */ = {isa = PBXBuildFile; fileRef = D03A46101BEEA6C60009759E /* weatherdata.txt */; };
+		D03A46131BEEBC850009759E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A46121BEEBC850009759E /* ArrayExtension.swift */; };
+		D03A46151BEF91AD0009759E /* FirebaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A46141BEF91AD0009759E /* FirebaseReferences.swift */; };
 		D057F77D1BEEA2440004831A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D057F77C1BEEA2440004831A /* AppDelegate.swift */; };
 		D057F77F1BEEA2440004831A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D057F77E1BEEA2440004831A /* ViewController.swift */; };
 		D057F7821BEEA2440004831A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D057F7801BEEA2440004831A /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		8E84CF736337EA46C3108178 /* Pods-WeatherDataApp-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherDataApp-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherDataApp-IOS/Pods-WeatherDataApp-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D002840F1BEEA31200CD74ED /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D03A46101BEEA6C60009759E /* weatherdata.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weatherdata.txt; sourceTree = "<group>"; };
+		D03A46121BEEBC850009759E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		D03A46141BEF91AD0009759E /* FirebaseReferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReferences.swift; sourceTree = "<group>"; };
 		D057F7791BEEA2440004831A /* WeatherDataApp-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeatherDataApp-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D057F77C1BEEA2440004831A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D057F77E1BEEA2440004831A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				D057F7851BEEA2440004831A /* LaunchScreen.storyboard */,
 				D057F7881BEEA2440004831A /* Info.plist */,
 				D002840F1BEEA31200CD74ED /* Day.swift */,
+				D03A46121BEEBC850009759E /* ArrayExtension.swift */,
+				D03A46141BEF91AD0009759E /* FirebaseReferences.swift */,
 			);
 			path = "WeatherDataApp-IOS";
 			sourceTree = "<group>";
@@ -219,8 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D057F77F1BEEA2440004831A /* ViewController.swift in Sources */,
+				D03A46151BEF91AD0009759E /* FirebaseReferences.swift in Sources */,
 				D057F77D1BEEA2440004831A /* AppDelegate.swift in Sources */,
 				D00284101BEEA31200CD74ED /* Day.swift in Sources */,
+				D03A46131BEEBC850009759E /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

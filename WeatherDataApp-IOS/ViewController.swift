@@ -9,21 +9,31 @@
 import UIKit
 import Firebase
 let root_URL = "https://weatherdataapp.firebaseio.com"
-let rootURL = "https://resplendent-inferno-6149.firebaseio.com"
+let meanURL = "https://weatherdataapp.firebaseio.com/Data"
+let medianURL = "https://weatherdataapp.firebaseio.com/Data/Median"
 
 // Create a reference to a Firebase location
 var myRootRef = Firebase(url: root_URL)!
+var myMeanRef = Firebase(url: meanURL)
+var myMedianRef = Firebase(url: medianURL)
 // Write data to Firebase
+
+
 func testFireBase() {
   
     myRootRef.childByAppendingPath("/test").setValue("this is a test")
 }
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,10 +119,74 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonPressed(sender: UIButton) {
-        testFireBase()
-//        let test = collapseToSingleDays("weatherdata")
-//        print(test)
+//        let myMean = createMeanDictionary()
+//        print(myMean)
+        let myMedian = createMedianDictionary()
+////        print(myMedian)
+//        
+//        myMeanRef.childByAppendingPath("Mean").setValue(myMean)
+        myMeanRef.childByAppendingPath("Median").setValue(myMedian)
+       // myMedianRef.setValue(myMedian)
+//        for mean in myMean {
+//            if mean != nil {  myMeanRef.childByAppendingPath("Mean").setValue(mean)
+//            }
+//        }
+//       for median in myMedian {
+//        if median != nil {
+//            
+//            myMedianRef.setValuesForKeysWithDictionary(median)
+//        }
+//        
+//        }
+        
+        
     }
+    
+    func createMeanDictionary() -> ([[String: AnyObject]!]){
+        let myData = collapseToSingleDays("weatherdata")
+        var dates: [NSDate]
+        var meanDictionary: [String: AnyObject]!
+        var meanDictionaryArray = [meanDictionary]
+                for data in myData {
+            
+            
+            meanDictionary = [String(data.date): ["Temp": data.airTemperatureReading.calculateMean(), "Barometric": data.barometricPressureReading.calculateMean(), "WindSpeed": data.windSpeedReadings.calculateMean()]]
+        
+            meanDictionaryArray.append(meanDictionary)
+            
+        }
+        
+        meanDictionaryArray.removeFirst()
+        
+        
+         return meanDictionaryArray
+       
+        
+    }
+    
+    func createMedianDictionary() -> ([[String: AnyObject]!]) {
+        
+        let myData = collapseToSingleDays("weatherdata")
+        var dates: [NSDate]
+        var medianDictionary: [String: AnyObject]!
+        var medianDictionaryArray = [medianDictionary]
+        for data in myData {
+            
+            
+            medianDictionary = [String(data.date): ["Temp": data.airTemperatureReading.calculateMedian(), "Barometric": data.barometricPressureReading.calculateMedian(), "WindSpeed": data.windSpeedReadings.calculateMedian()]]
+            
+            medianDictionaryArray.append(medianDictionary)
+            
+        }
+        
+        medianDictionaryArray.removeFirst()
+        
+        return medianDictionaryArray
+        
+        
+    }
+
+    
     
 
 }
